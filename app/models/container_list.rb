@@ -1,6 +1,6 @@
 class ContainerList < ApplicationRecord
   belongs_to :container
-  has_many :bl_house
+  belongs_to :bl_master
 
   validates :container, presence: true 
 end

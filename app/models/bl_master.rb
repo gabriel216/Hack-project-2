@@ -2,6 +2,8 @@ class BlMaster < ApplicationRecord
   belongs_to :shipping_company
   belongs_to :nvocc
   belongs_to :ship
+  has_many :container_list
+  has_many :containers, :through => :container_list
 
 	validates :shipping_company, presence: true
     validates :nvocc, presence: true

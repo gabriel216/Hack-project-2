@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  standard: MyString
+  metal: MyString
+  high_cube: MyString
+  reefer: MyString
+  open_top: MyString
+  flat_rack: MyString
+  open_side: MyString
+  tank: MyString
+  flexi_tank: MyString
+
+two:
+  standard: MyString
+  metal: MyString
+  high_cube: MyString
+  reefer: MyString
+  open_top: MyString
+  flat_rack: MyString
+  open_side: MyString
+  tank: MyString
+  flexi_tank: MyString

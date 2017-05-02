@@ -53,19 +53,28 @@ ActiveRecord::Schema.define(version: 20170501093132) do
 
   create_table "container_lists", force: :cascade do |t|
     t.integer  "container_id"
+    t.integer  "bl_master_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["bl_master_id"], name: "index_container_lists_on_bl_master_id", using: :btree
     t.index ["container_id"], name: "index_container_lists_on_container_id", using: :btree
+  end
+
+  create_table "container_types", force: :cascade do |t|
+    t.integer  "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "containers", force: :cascade do |t|
     t.string   "commodity"
-    t.string   "container_type"
-    t.integer  "size"
+    t.decimal  "size"
     t.string   "character"
+    t.integer  "container_type_id"
     t.integer  "shipping_company_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.index ["container_type_id"], name: "index_containers_on_container_type_id", using: :btree
     t.index ["shipping_company_id"], name: "index_containers_on_shipping_company_id", using: :btree
   end
 
@@ -96,7 +105,9 @@ ActiveRecord::Schema.define(version: 20170501093132) do
   add_foreign_key "bl_masters", "nvoccs"
   add_foreign_key "bl_masters", "shipping_companies"
   add_foreign_key "bl_masters", "ships"
+  add_foreign_key "container_lists", "bl_masters"
   add_foreign_key "container_lists", "containers"
+  add_foreign_key "containers", "container_types"
   add_foreign_key "containers", "shipping_companies"
   add_foreign_key "ships", "shipping_companies"
 end

@@ -2,9 +2,9 @@
   def change
     create_table :containers do |t|
       t.string :commodity
-      t.string :container_type
-      t.integer :size
+      t.decimal :size
       t.string :character
+      t.references :container_type, foreign_key: true
       t.references :shipping_company, foreign_key: true
 
       t.timestamps
