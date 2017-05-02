@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bl_master: one
+  bl_code: 1
+  nvocc: one
+  client: one
+  container_list: one
+
+two:
+  bl_master: two
+  bl_code: 1
+  nvocc: two
+  client: two
+  container_list: two

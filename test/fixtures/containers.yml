@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commodity: MyString
+  container_type: MyString
+  size: 1
+  character: MyString
+  shipping_company: one
+
+two:
+  commodity: MyString
+  container_type: MyString
+  size: 1
+  character: MyString
+  shipping_company: two
